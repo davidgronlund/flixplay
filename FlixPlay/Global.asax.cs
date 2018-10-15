@@ -1,5 +1,5 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using FlixPlay.CustomViewEngines;
 
 namespace FlixPlay
 {
@@ -8,8 +8,7 @@ namespace FlixPlay
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
-            //Tip: Want to call the EPiServer API on startup? Add an initialization module instead (Add -> New Item.. -> EPiServer -> Initialization Module)
+            ViewEngines.Engines.Insert(0, new FeatureViewEngine());
         }
     }
 }
